@@ -1,0 +1,38 @@
+PS C:\Users\Khulile\free-claude-code> uv sync   
+Resolved 132 packages in 1ms
+Audited 77 packages in 4ms
+PS C:\Users\Khulile\free-claude-code> uv run dlb
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\Khulile\free-claude-code\.venv\Scripts\dlb.exe\__main__.py", line 4, in <module>
+    from digital_literacy_bridge.cli import main
+  File "C:\Users\Khulile\free-claude-code\digital_literacy_bridge\cli.py", line 4, in <module>
+    from digital_literacy_bridge.api.app import app
+  File "C:\Users\Khulile\free-claude-code\digital_literacy_bridge\api\app.py", line 13, in <module>
+    from digital_literacy_bridge.api.routes import router as api_router
+  File "C:\Users\Khulile\free-claude-code\digital_literacy_bridge\api\routes.py", line 17, in <module>
+    from digital_literacy_bridge.database.models import Course, Lesson, User, UserProgress
+  File "C:\Users\Khulile\free-claude-code\digital_literacy_bridge\database\models.py", line 228, in <module>
+    class UserProgress(Base):
+    ...<52 lines>...
+            return f"<UserProgress(user_id={self.user_id!r}, lesson_id={self.lesson_id!r}, status={self.status!r})>"
+  File "C:\Users\Khulile\free-claude-code\.venv\Lib\site-packages\sqlalchemy\orm\decl_api.py", line 199, in __init__
+    _as_declarative(reg, cls, dict_)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\Khulile\free-claude-code\.venv\Lib\site-packages\sqlalchemy\orm\decl_base.py", line 245, in _as_declarative
+    return _MapperConfig.setup_mapping(registry, cls, dict_, None, {})
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Khulile\free-claude-code\.venv\Lib\site-packages\sqlalchemy\orm\decl_base.py", line 326, in setup_mapping
+    return _ClassScanMapperConfig(
+        registry, cls_, dict_, table, mapper_kw
+    )
+  File "C:\Users\Khulile\free-claude-code\.venv\Lib\site-packages\sqlalchemy\orm\decl_base.py", line 573, in __init__
+    self._extract_mappable_attributes()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Khulile\free-claude-code\.venv\Lib\site-packages\sqlalchemy\orm\decl_base.py", line 1530, in _extract_mappable_attributes
+    raise exc.InvalidRequestError(
+    ...<2 lines>...
+    )
+sqlalchemy.exc.InvalidRequestError: Attribute name 'metadata' is reserved when using the Declarative API.
+PS C:\Users\Khulile\free-claude-code> 
